@@ -7,5 +7,6 @@
     "lib": ["esnext", "es6", "dom", "dom.iterable"],
     "moduleResolution": "Node",
     "jsx": "preserve"
-  }
+  },
+  "include": ["./src/index.d.ts"]
 }

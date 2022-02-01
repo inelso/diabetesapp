@@ -15,21 +15,28 @@
  */
 /* eslint-disable no-undef, @typescript-eslint/no-unused-vars, no-unused-vars */
 import "./style.css";
+import Icon from './static/background.png';
+import assessment from './static/assessment.png';
+import purpleCircle from './static/circle-purple-01.png';
 
 // This example uses a GroundOverlay to place an image on the map
 // showing an antique map of Newark, NJ.
 
 let historicalOverlay;
+let assessmentOverlay;
+let purpleCircleOverlay;
+
+// Add the image to our existing div.
+const myIcon = new Image();
+myIcon.src = Icon;
+
+const assessmentIcon = new Image();
+assessmentIcon.src = assessment;
+
+const purpleCircleIcon = new Image();
+purpleCircleIcon.src = purpleCircle;
 
 function initMap(): void {
-  const map = new google.maps.Map(
-    document.getElementById("map") as HTMLElement,
-    {
-      zoom: 13,
-      center: { lat: 40.74, lng: -74.18 },
-    }
-  );
-
   const imageBounds = {
     north: 40.773941,
     south: 40.712216,
@@ -37,10 +44,84 @@ function initMap(): void {
     west: -74.22655,
   };
 
+  const center = { lat: 40.70, lng: -74.18 };
+
+  const map = new google.maps.Map(
+    document.getElementById("map") as HTMLElement,
+    {
+      zoom: 13,
+      center: { lat: 40.74, lng: -74.18 },
+      restriction: {
+        latLngBounds: imageBounds,
+        strictBounds: false,
+      }
+    }
+  );
+
   historicalOverlay = new google.maps.GroundOverlay(
-    "https://storage.googleapis.com/geo-devrel-public-buckets/newark_nj_1922-661x516.jpeg",
+    myIcon.src,
     imageBounds
   );
   historicalOverlay.setMap(map);
+  
+  // Drawing Assessment node
+  const assessmentBounds = {
+    north: 40.753941,
+    south: 40.742216, 
+    east: -74.16544, 
+    west: -74.17655,
+  };
+
+  assessmentOverlay = new google.maps.GroundOverlay(
+    assessmentIcon.src,
+    assessmentBounds
+  );
+  assessmentOverlay.setMap(map);
+
+  // Drawing first purple node
+  const nodeBounds = {
+    north: 40.743216,
+    south: 40.739216, 
+    east: -74.16544, 
+    west: -74.17655,
+  };
+
+  purpleCircleOverlay = new google.maps.GroundOverlay(
+    purpleCircleIcon.src,
+    nodeBounds
+  );
+  purpleCircleOverlay.setMap(map);
+
+  const zoomOptions = { minZoom: 14, maxZoom: 16 };
+  map.setOptions(zoomOptions);
+  map.fitBounds(imageBounds);
+
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(40.74, -74.18),
+    map: map,
+    icon: {
+      url: purpleCircleIcon.src,
+      size: new google.maps.Size(256, 256),
+      anchor: new google.maps.Point(0, 0),
+      labelOrigin: new google.maps.Point(0, 0)
+     },
+    label: {text: "hi"}
+   });
+  // const marker = new google.maps.Marker({
+  //   position: center,
+  //   icon: {
+  //     url: purpleCircleIcon.src,
+  //     labelOrigin: new google.maps.Point(0, 0)
+  //   },
+  //   map: map,
+  //   label: {text: "hi"},
+  // });
+  // marker.setShape({type: "rect", coords: null})
+
+  const imageMapType = new google.maps.ImageMapType({
+    tileSize: new google.maps.Size(256, 256),
+  });
+
+  map.overlayMapTypes.push(imageMapType);
 }
 export { initMap };
