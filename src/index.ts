@@ -19,12 +19,15 @@ import background from './static/background.png';
 import assessment from './static/assessment.png';
 import nodes from './static/nodes.json';
 import edges from './static/edge.json';
+import { getEffectiveConstraintOfTypeParameter, getPositionOfLineAndCharacter } from "typescript";
 
 // This example uses a GroundOverlay to place an image on the map
 // showing an antique map of Newark, NJ.
 
 let backgroundOverlay;
 let assessmentOverlay;
+
+
 
 // Add the image to our existing div.
 const backgroundIcon = new Image();
@@ -34,6 +37,7 @@ const assessmentIcon = new Image();
 assessmentIcon.src = assessment;
 
 function initMap(): void {
+ 
   const backgroundBounds = {
     north: 85,
     south: -85,
@@ -54,6 +58,8 @@ function initMap(): void {
       }
     }
   );
+
+
 
   map.setOptions(zoomOptions);
   map.fitBounds(backgroundBounds);
@@ -109,6 +115,7 @@ function initMap(): void {
   // Draw nodes
   for (let i = 0; i < nodes.length; i++) {
     var node = nodes[i];
+    var ids = node["id"];
     const cityCircle = new google.maps.Circle({
       strokeColor: "#FFFFFF",
       strokeOpacity: 1,
@@ -119,7 +126,28 @@ function initMap(): void {
       center: { lat: node.y, lng: node.x },
       radius: 200000,
     });
+    
+    var myLatlng  = new google.maps.LatLng( node.y, node.x );
+    var checkClicked;
+    google.maps.event.addListener(cityCircle, 'click', function(e) {
+      if (checkClicked != ids) {
+        var checkClicked = ids;
+        placeMarker(e.latLng, map);
+      }
+      console.log(ids);
+    });
+
+    function placeMarker(position, map) {
+      var marker = new google.maps.Marker({
+        position: position,
+        map: map
+      });  
+      map.panTo(center);
+    }
+    
   }
+
 }
+
 
 export { initMap };
