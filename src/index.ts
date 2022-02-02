@@ -15,61 +15,89 @@
  */
 /* eslint-disable no-undef, @typescript-eslint/no-unused-vars, no-unused-vars */
 import "./style.css";
-import Icon from './static/background.png';
+import background from './static/background.png';
 import assessment from './static/assessment.png';
-import purpleCircle from './static/circle-purple-01.png';
+import nodes from './static/nodes.json';
+import edges from './static/edge.json';
 
 // This example uses a GroundOverlay to place an image on the map
 // showing an antique map of Newark, NJ.
 
-let historicalOverlay;
+let backgroundOverlay;
 let assessmentOverlay;
-let purpleCircleOverlay;
 
 // Add the image to our existing div.
-const myIcon = new Image();
-myIcon.src = Icon;
+const backgroundIcon = new Image();
+backgroundIcon.src = background;
 
 const assessmentIcon = new Image();
 assessmentIcon.src = assessment;
 
-const purpleCircleIcon = new Image();
-purpleCircleIcon.src = purpleCircle;
-
 function initMap(): void {
-  const imageBounds = {
-    north: 40.773941,
-    south: 40.712216,
-    east: -74.12544,
-    west: -74.22655,
+  const backgroundBounds = {
+    north: 85,
+    south: -85,
+    east: 120.1,
+    west: -120.1,
   };
-
-  const center = { lat: 40.70, lng: -74.18 };
+  const center = { lat: 0, lng: 0 };
+  const zoomOptions = { minZoom: 4, maxZoom: 5 };
 
   const map = new google.maps.Map(
     document.getElementById("map") as HTMLElement,
     {
-      zoom: 13,
-      center: { lat: 40.74, lng: -74.18 },
+      zoom: 6,
+      center: center,
       restriction: {
-        latLngBounds: imageBounds,
+        latLngBounds: backgroundBounds,
         strictBounds: false,
       }
     }
   );
 
-  historicalOverlay = new google.maps.GroundOverlay(
-    myIcon.src,
-    imageBounds
+  map.setOptions(zoomOptions);
+  map.fitBounds(backgroundBounds);
+
+  backgroundOverlay = new google.maps.GroundOverlay(
+    backgroundIcon.src,
+    backgroundBounds
   );
-  historicalOverlay.setMap(map);
+  backgroundOverlay.setMap(map);
+
+  var path : google.maps.LatLngLiteral[] = [];
+  // Draw lines
+  for (let i = 0; i < edges.length; i++) {
+    var edge = edges[i];
+    path.push({ lat: edge.y, lng: edge.x });
+  }
+
+  var flightPath = new google.maps.Polyline({
+    path: path,
+    geodesic: true,
+    strokeColor: "#52C4F1",
+    strokeOpacity: 1.0,
+    strokeWeight: (map.getZoom() == 4) ? 20 : 40,
+  });
+
+  flightPath.setMap(map);
+
+  // Listener for edge width resize
+  google.maps.event.addListener(map, 'zoom_changed', function() {
+    console.log(map.getZoom())
+    var zoom = map.getZoom();
+    if (zoom == 4) {
+      flightPath.setOptions({strokeWeight: 20});
+    } else if (zoom == 5) {
+      flightPath.setOptions({strokeWeight: 40});
+    }
+});
   
   // Drawing Assessment node
   const assessmentBounds = {
-    north: 40.753941,
-    south: 40.742216, 
-    east: -74.16544, 
-    west: -74.17655,
+    north: 3,
+    south: -3, 
+    east: 4, 
+    west: -4,
   };
 
   assessmentOverlay = new google.maps.GroundOverlay(
@@ -78,50 +106,20 @@ function initMap(): void {
   );
   assessmentOverlay.setMap(map);
 
-  // Drawing first purple node
-  const nodeBounds = {
-    north: 40.743216,
-    south: 40.739216, 
-    east: -74.16544, 
-    west: -74.17655,
-  };
-
-  purpleCircleOverlay = new google.maps.GroundOverlay(
-    purpleCircleIcon.src,
-    nodeBounds
-  );
-  purpleCircleOverlay.setMap(map);
-
-  const zoomOptions = { minZoom: 14, maxZoom: 16 };
-  map.setOptions(zoomOptions);
-  map.fitBounds(imageBounds);
-
-  var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(40.74, -74.18),
-    map: map,
-    icon: {
-      url: purpleCircleIcon.src,
-      size: new google.maps.Size(256, 256),
-      anchor: new google.maps.Point(0, 0),
-      labelOrigin: new google.maps.Point(0, 0)
-     },
-    label: {text: "hi"}
-   });
-  // const marker = new google.maps.Marker({
-  //   position: center,
-  //   icon: {
-  //     url: purpleCircleIcon.src,
-  //     labelOrigin: new google.maps.Point(0, 0)
-  //   },
-  //   map: map,
-  //   label: {text: "hi"},
-  // });
-  // marker.setShape({type: "rect", coords: null})
-
-  const imageMapType = new google.maps.ImageMapType({
-    tileSize: new google.maps.Size(256, 256),
-  });
-
-  map.overlayMapTypes.push(imageMapType);
+  // Draw nodes
+  for (let i = 0; i < nodes.length; i++) {
+    var node = nodes[i];
+    const cityCircle = new google.maps.Circle({
+      strokeColor: "#FFFFFF",
+      strokeOpacity: 1,
+      strokeWeight: 4,
+      fillColor: "#932B8F",
+      fillOpacity: 1,
+      map,
+      center: { lat: node.y, lng: node.x },
+      radius: 200000,
+    });
+  }
 }
+
 export { initMap };
