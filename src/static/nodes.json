@@ -38,7 +38,7 @@
     {
         "id": 4,
         "title": "Measure BMI",
-        "x": -10,
+        "x": -20,
         "y": -20,
         "description": "<p><br/><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:black;'>BMI Calculation:</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'>Calculate the BMI by measuring weight in kilograms and height in metres.<br/><span style='color:yellow;'>Info/Note:</span>&nbsp;BMI should be interpreted with caution because the calculation alone it is not a direct measure of adiposity, especially in highly muscular adults. Do not use bio-impedance as a substitute for BMI as evidence to support its use is lacking at present.<br/><br/></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:black;'>Obesity</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>Obesity is commonly defined by a measurement of BMI of ≥30 kg/m2 in Western populations, however different ethnic-specific cut points for defining obesity may need to be considered. Emerging evidence points towards lower BMI levels being associated with greater risk for metabolic diseases based on ethnicity.<br/><span style='color:yellow;'>Table or graphic:</span>&nbsp;The degree of overweight and obesity can be classified as:<br/><ul><li>BMI 25.00 - 29.99 kg/m2 – Overweight.</li><li>BMI 30.00 - 34.99 kg/m2 − Obesity Class I.</li><li>BMI 35.00 - 39.99 kg/m2 − Obesity Class II.</li><li>BMI ≥40.00 kg/m2 − Obesity Class III (extreme obesity).</li></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample3' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Risks Associated with BMI</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample3'><div class='card card-body'>1. Adults are identified at increased risk for CVD at:<br/><ul><li>BMI 25.00 - 29.99 kg/m2 – Overweight</li><li>BMI ≥30 kg/m2 – Obesity</li></ul>2. Adults are identified at increased risk for of death from all causes at BMI ≥30 kg/m2 (Obesity).</div></div>",
         "colour": "#932b8f",
@@ -55,8 +55,8 @@
         "description": "<p><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Process</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'>Follow the WHO STEPS protocol for measuring waist circumference:<br/>Measure waist circumference, locate the upper hip bone and the top of the right iliac crest. Place a measuring tape in a horizontal plane around the abdomen at the level of the iliac crest. Before reading the tape measure, ensure that the tape is snug, but does not compress the skin, and is parallel to the floor. The measurement is made at the end of a normal expiration.<br/><br/></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Who to measure?</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>Consider measuring waist circumference in people with a BMI ≤35 kg/m2.</div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample3' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Waist Circumference Threshold</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample3'><div class='card card-body'>For screening and risk assessment purposes in people of Middle Eastern ethnicity, use a waist circumference threshold of ≥90 cm (35 inches) in men and ≥80 cm (31.5 inches) in women for diagnosing central adiposity. However, thresholds for acceptable waist circumferences vary between ethnic groups. The table below outlines the upper limits of acceptable waist circumferences in different ethnic groups.<br/><table class='table'><thead><tr><th scope='col'>Ethnic Group</th><th scope='col'>Waist Circumference Thresholds</th></tr></thead><tbody><tr><th scope='row'>European</th><td>Men<br/>Women</td><td>≥ 94 cm (37 inches)≥ 80 cm (31.5 inches)</td></tr><tr><th scope='row'>South Asian, Chinese or Japanese</th><td>Men<br/>Women</td><td>≥ 90 cm (35 inches) ≥ 80 cm (31.5 inches)</td></tr><tr><th scope='row'>Middle Eastern</th><td colspan='2'>Use South Asian recommendations until more specific data are available [R-GDG].</td></tr><tr><th scope='row'>Ethnic south and central American</th><td colspan='2'>Use South Asian recommendations until more specific data are available</td></tr><tr><th scope='row'>Sub-Saharan African</th><td> colspan='2'>Use European data until more specific data are available</td></tbody></table></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample4' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Risks Associated with Waist Circumference</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample4'><div class='card card-body'>Waist circumference along with BMI can be used as a measure to assess risk; however, if the BMI is >35 kg/m2, the waist circumference does not add to the absolute measure of risk. A larger waist circumference is a recognised risk factor of developing atherosclerosis and DM in an individual.</div></div>",
         "colour": "#932b8f",
         "label": {
-            "x": 0,
-            "y": 30
+            "x": -135,
+            "y": 0
         }
     },
     {
@@ -67,18 +67,18 @@
         "description":"Neck circumference (NC) is considered a simple and accurate way of assessing overweight and obesity in adults.<br/><br/><p><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Process</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'>NC should be measured with the individual standing erect with their head positioned in the horizontal plane. The superior border of a tape measure should be placed just below the laryngeal prominence and applied perpendicular to the long axis of the neck.<br/><br/></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Neck Circumference Threshold</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>NC above ≥40 cm in Caucasian men and ≥34cm in Caucasian women are associated with increased cardio-metabolic risk. Precise cut-offs in the Qatari population remain to be determined.</div></div>",
         "colour": "#932b8f",
         "label": {
-            "x": 0,
-            "y": -30
+            "x": 135,
+            "y": 0
         }
     },
     {
         "id": 7,
         "title": "Measure Blood Pressure",
-        "x": 10,
+        "x": 20,
         "y": -20,
         "colour": "#932b8f",
         "label": {
-            "x": 100,
+            "x": 120,
             "y": 0
         }
     },   
