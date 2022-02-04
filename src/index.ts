@@ -77,27 +77,32 @@ function initMap(): void {
     path.push({ lat: edge.y, lng: edge.x });
   }
 
+  // var path2 : google.maps.LatLngLiteral[] = [];
+  // //Draw lines
+  //   for (let i = 2; i < edges.length; i++) {
+  //     var edge2 = edges[i];
+  //     path2.push({ lat: edge2.y, lng: edge2.x });
+  //   }
+
   var flightPath = new google.maps.Polyline({
     path: path,
     geodesic: true,
     strokeColor: "#52C4F1",
     strokeOpacity: 1.0,
-    strokeWeight: (map.getZoom() == 4) ? 20 : 40,
+    zIndex:-5,
+    strokeWeight: (map.getZoom() == 4) ? 30 : 50,
   });
 
-  flightPath.setMap(map);
+//  var flightPath2 = new google.maps.Polyline({
+//     path: path2,
+//     geodesic: true,
+//     strokeColor: "#52C4F1",
+//     strokeOpacity: 1.0,
+//     zIndex:-5,
+//     strokeWeight: (map.getZoom() == 4) ? 30 : 40,
+//   });
 
-  // Listener for edge width resize
-  google.maps.event.addListener(map, 'zoom_changed', function() {
-    console.log(map.getZoom())
-    var zoom = map.getZoom();
-    if (zoom == 4) {
-      flightPath.setOptions({strokeWeight: 20});
-    } else if (zoom == 5) {
-      flightPath.setOptions({strokeWeight: 40});
-    }
-});
-  
+  //flightPath2.setMap(map);
   // Drawing Assessment node
   const assessmentBounds = {
     north: 3,
@@ -112,29 +117,52 @@ function initMap(): void {
   );
   assessmentOverlay.setMap(map);
 
+  flightPath.setMap(map);
+  
+
+  // Listener for edge width resize
+  google.maps.event.addListener(map, 'zoom_changed', function() {
+    console.log(map.getZoom())
+    var zoom = map.getZoom();
+    if (zoom == 4) {
+      flightPath.setOptions({strokeWeight: 25});
+      //flightPath2.setOptions({strokeWeight: 25});
+    } else if (zoom == 5) {
+      flightPath.setOptions({strokeWeight: 105});
+      //flightPath2.setOptions({strokeWeight: 40});
+    }
+});
+  
+  
+
+  
+
   // Draw nodes
   for (let i = 0; i < nodes.length; i++) {
     var node = nodes[i];
-    var ids = node["id"];
+    var id = node["id"];
     const cityCircle = new google.maps.Circle({
       strokeColor: "#FFFFFF",
       strokeOpacity: 1,
       strokeWeight: 4,
       fillColor: "#932B8F",
       fillOpacity: 1,
+      zIndex:3,
       map,
       center: { lat: node.y, lng: node.x },
       radius: 200000,
+      //centerf: getCenter().lat(),
+      //centerl: getCenter().lng(),
     });
     
     var myLatlng  = new google.maps.LatLng( node.y, node.x );
     var checkClicked;
     google.maps.event.addListener(cityCircle, 'click', function(e) {
-      if (checkClicked != ids) {
-        var checkClicked = ids;
+      if (checkClicked!= id) {
+        var checkClicked = id;
         placeMarker(e.latLng, map);
       }
-      console.log(ids);
+      console.log(cityCircle.getCenter());
     });
 
     function placeMarker(position, map) {
@@ -146,7 +174,16 @@ function initMap(): void {
     }
     
   }
+  
 
+  function placeMarker(position, map) {
+    var marker = new google.maps.Marker({
+      position: position,
+      map : map,
+      title: "Hello World!",
+    });
+    map.panTo(position);
+  }
 }
 
 
