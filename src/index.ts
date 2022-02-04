@@ -147,7 +147,6 @@ function initMap(): void {
       strokeWeight: 4,
       fillColor: "#932B8F",
       fillOpacity: 1,
-      zIndex:3,
       map,
       center: { lat: node.y, lng: node.x },
       radius: 200000,
