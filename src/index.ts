@@ -26,6 +26,7 @@ import { getEffectiveConstraintOfTypeParameter, getPositionOfLineAndCharacter } 
 
 let backgroundOverlay;
 let assessmentOverlay;
+var markers : google.maps.Marker[] = [];
 
 // Add the image to our existing div.
 const backgroundIcon = new Image();
@@ -95,8 +96,10 @@ function initMap(): void {
         polyline.setOptions({strokeWeight: 20});
       }
     });
-    
   }
+
+  // Asssessment Icon
+  // TODO: Will add these icons in a JSON, similar to nodes and edges
   const assessmentBounds = {
     north: 3,
     south: -3, 
@@ -112,51 +115,39 @@ function initMap(): void {
 
   // Draw nodes
   for (let i = 0; i < nodes.length; i++) {
-    var node = nodes[i];
-    var id = node["id"];
-    const cityCircle = new google.maps.Circle({
+    let nodeData = nodes[i];
+    let center = { lat: nodeData.y, lng: nodeData.x };
+    const node = new google.maps.Circle({
       strokeColor: "#FFFFFF",
       strokeOpacity: 1,
       strokeWeight: 4,
       fillColor: "#932B8F",
       fillOpacity: 1,
       map,
-      center: { lat: node.y, lng: node.x },
+      center: center,
       radius: 200000,
-      //centerf: getCenter().lat(),
-      //centerl: getCenter().lng(),
-    });
-    
-    var myLatlng  = new google.maps.LatLng( node.y, node.x );
-    var checkClicked;
-    google.maps.event.addListener(cityCircle, 'click', function(e) {
-      if (checkClicked!= id) {
-        var checkClicked = id;
-        placeMarker(e.latLng, map);
-      }
-      console.log(cityCircle.getCenter());
     });
 
-    function placeMarker(position, map) {
-      var marker = new google.maps.Marker({
-        position: position,
-        map: map
-      });  
-      map.panTo(center);
-    }
-    
-  }
-  
-
-  function placeMarker(position, map) {
-    var marker = new google.maps.Marker({
-      position: position,
-      map : map,
-      title: "Hello World!",
+    let marker = new google.maps.Marker({
+      position: center,
+      map: map,
+      visible: false
     });
-    map.panTo(position);
+    
+    // Store the marker reference in the global array
+    markers.push(marker);
+
+    // Listener on the node/shape for click event
+    google.maps.event.addListener(node, 'click', () => {
+      // Set all markers to invisible
+      markers.forEach(marker => {
+        marker.setVisible(false);
+      });
+
+      // Set specific marker to visible and center on it
+      marker.setVisible(true);
+      map.panTo(marker.getPosition()!);
+    });
   }
 }
-
-
 export { initMap };
