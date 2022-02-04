@@ -89,7 +89,7 @@ function initMap(): void {
 
     // Listener for edge width resize
     google.maps.event.addListener(map, 'zoom_changed', function() {
-      var zoom = map.getZoom();
+      let zoom = map.getZoom();
       if (zoom == 4) {
         polyline.setOptions({strokeWeight: 10});
       } else if (zoom == 5) {
@@ -127,6 +127,24 @@ function initMap(): void {
       center: center,
       radius: 200000,
     });
+
+    // Marker to hold the label
+    // We set a circle with the very small scale (1), so that the labelOrigin can work
+    // otherwise if the scale is 0, the labelOrigin does not work
+    let labelStaticMarker = new google.maps.Marker({
+      position: center,
+      map: map,
+      icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 1,
+          strokeColor: nodeData.colour,
+          labelOrigin: new google.maps.Point(
+            nodeData!.label != undefined ? nodeData.label.x : 0, 
+            nodeData!.label != undefined ? nodeData.label.y : 0)
+      },
+      visible: true
+    });
+    labelStaticMarker.setLabel({text: nodeData.title!});
 
     let marker = new google.maps.Marker({
       position: center,
