@@ -144,7 +144,7 @@ function initMap(): void {
       },
       visible: true
     });
-    labelStaticMarker.setLabel({text: nodeData.title!});
+    labelStaticMarker.setLabel({text: nodeData.title!, fontWeight: "bold"});
 
     let marker = new google.maps.Marker({
       position: center,
