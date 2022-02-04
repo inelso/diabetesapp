@@ -27,8 +27,6 @@ import { getEffectiveConstraintOfTypeParameter, getPositionOfLineAndCharacter } 
 let backgroundOverlay;
 let assessmentOverlay;
 
-
-
 // Add the image to our existing div.
 const backgroundIcon = new Image();
 backgroundIcon.src = background;
@@ -38,6 +36,7 @@ assessmentIcon.src = assessment;
 
 function initMap(): void {
  
+  // Create basic map
   const backgroundBounds = {
     north: 85,
     south: -85,
@@ -59,8 +58,6 @@ function initMap(): void {
     }
   );
 
-
-
   map.setOptions(zoomOptions);
   map.fitBounds(backgroundBounds);
 
@@ -70,40 +67,36 @@ function initMap(): void {
   );
   backgroundOverlay.setMap(map);
 
-  var path : google.maps.LatLngLiteral[] = [];
   // Draw lines
-  for (let i = 0; i < edges.length; i++) {
-    var edge = edges[i];
-    path.push({ lat: edge.y, lng: edge.x });
+  for (let pathIndex = 0; pathIndex < edges.length; pathIndex++) {
+    let path = edges[pathIndex];
+
+    let pathToPush : google.maps.LatLngLiteral[] = [];
+    for (let lineIndex = 0; lineIndex < path.length; lineIndex++) {
+      let line = path[lineIndex];
+      pathToPush.push({ lat: line.y, lng: line.x });
+    }
+
+    let polyline = new google.maps.Polyline({
+      path: pathToPush,
+      geodesic: false,
+      strokeColor: "#52C4F1",
+      strokeOpacity: 1.0,
+      strokeWeight: (map.getZoom() == 4) ? 10 : 20,
+    });
+    polyline.setMap(map);
+
+    // Listener for edge width resize
+    google.maps.event.addListener(map, 'zoom_changed', function() {
+      var zoom = map.getZoom();
+      if (zoom == 4) {
+        polyline.setOptions({strokeWeight: 10});
+      } else if (zoom == 5) {
+        polyline.setOptions({strokeWeight: 20});
+      }
+    });
+    
   }
-
-  // var path2 : google.maps.LatLngLiteral[] = [];
-  // //Draw lines
-  //   for (let i = 2; i < edges.length; i++) {
-  //     var edge2 = edges[i];
-  //     path2.push({ lat: edge2.y, lng: edge2.x });
-  //   }
-
-  var flightPath = new google.maps.Polyline({
-    path: path,
-    geodesic: true,
-    strokeColor: "#52C4F1",
-    strokeOpacity: 1.0,
-    zIndex:-5,
-    strokeWeight: (map.getZoom() == 4) ? 30 : 50,
-  });
-
-//  var flightPath2 = new google.maps.Polyline({
-//     path: path2,
-//     geodesic: true,
-//     strokeColor: "#52C4F1",
-//     strokeOpacity: 1.0,
-//     zIndex:-5,
-//     strokeWeight: (map.getZoom() == 4) ? 30 : 40,
-//   });
-
-  //flightPath2.setMap(map);
-  // Drawing Assessment node
   const assessmentBounds = {
     north: 3,
     south: -3, 
@@ -116,26 +109,6 @@ function initMap(): void {
     assessmentBounds
   );
   assessmentOverlay.setMap(map);
-
-  flightPath.setMap(map);
-  
-
-  // Listener for edge width resize
-  google.maps.event.addListener(map, 'zoom_changed', function() {
-    console.log(map.getZoom())
-    var zoom = map.getZoom();
-    if (zoom == 4) {
-      flightPath.setOptions({strokeWeight: 25});
-      //flightPath2.setOptions({strokeWeight: 25});
-    } else if (zoom == 5) {
-      flightPath.setOptions({strokeWeight: 105});
-      //flightPath2.setOptions({strokeWeight: 40});
-    }
-});
-  
-  
-
-  
 
   // Draw nodes
   for (let i = 0; i < nodes.length; i++) {
