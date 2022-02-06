@@ -86,7 +86,7 @@
         "id": 8,
         "title": "Blood Tests",
         "x": 0,
-        "y": -1750,
+        "y": -30,
         "description":"Undertake the following screening blood tests:<ul><li>Glycated haemoglobin (HBA1c).</li><li>Fasting glucose (if possible).</li><li>Fasting or non-fasted, lipids.</li></ul><span style='color:yellow;'>Info/Note:</span>&nbsp;When using HBA1c, it should be noted that:<ul><li>Using HBA1c to screen for prediabetes may be problematic in adults with certain haemoglobinopathies or conditions that affect red blood cell turnover.</li><li>Testing should be performed in a laboratory using a method that is NGSP-certified and standardised to the DCCT assay.</li></ul>",
         "colour": "#932b8f"
     },  
@@ -94,7 +94,7 @@
         "id": 13,
         "title": "ASCVD Risk Calculation",
         "x": 0,
-        "y": -1500,
+        "y": -39,
         "colour": "#932b8f"
     },
     {
@@ -114,15 +114,15 @@
     {
         "id": 28,
         "title": "Diagnosis of T2DM",
-        "x": -1200,
-        "y": -1200,
+        "x": -45,
+        "y": -55,
         "colour": "#f27aaa"
     },
     {
         "id": 29,
         "title": "Management of T2DM",
-        "x": -1200,
-        "y": -900,
+        "x": -45,
+        "y": -64,
         "colour": "#ee2b2f"
     },
     {
@@ -135,15 +135,15 @@
     {
         "id": 31,
         "title": "Diagnosis of Prediabetes",
-        "x": -500,
-        "y": -1200,
+        "x": -25,
+        "y": -55,
         "colour": "#f27aaa"
     },
     {
         "id": 32,
         "title": "Management of Prediabetes",
-        "x": -500,
-        "y": -900,
+        "x": -25,
+        "y": -64,
         "colour": "#ee2b2f"
     }
     ,
@@ -157,8 +157,8 @@
     {
         "id": 34,
         "title": "No Diagnosis of DM or Prediabetes",
-        "x": 500,
-        "y": -1200,
+        "x": 14,
+        "y": -55,
         "description":"When there is no diagnosis of Diabetes Mellitus (DM) or prediabetes, diabetes risk calculation should be the next step.",
         "colour": "#f27aaa"
     }
@@ -166,8 +166,8 @@
     {
         "id": 35,
         "title": "Diabetes Risk Calculation",
-        "x": 500,
-        "y": -900,
+        "x": 14,
+        "y": -64,
         "description":"Risk assessment tool for those not identified with prediabetes or diabetes:<ul><li>The ADA risk calculator should be used to calculate the risk of developing diabetes.</li><li>A score of ≥5 indicates an increased risk of T2DM.</li></ul><span style='color:red;'>Info:</span>&nbsp;Confirmation by a doctor of a diagnosis of T2DM or prediabetes is recommended.<br/>Link: <a href='https://www.diabetes.org/risk-test'>Risk Test</a>",
         "colour": "#ee2b2f"
     },
@@ -181,8 +181,8 @@
     {
         "id": 37,
         "title": "Other Diagnoses",
-        "x": 1200,
-        "y": -1200,
+        "x": 35,
+        "y": -55,
         "description":"Some other conditions can also be diagnosed during diabetes screening:<br/><ul><li>Dyslipidemia</li><li>Hypertension</li><li>Overweight or obesity</li><li>Cessation of tobacco use</li><li>Depression</li></ul>Refer to the <a href='https://www.moph.gov.qa/english/OurServices/eservices/Pages/Clinical-Guidelines.aspx'>MOPH National Clinical Guidelines</a> for detailed information on management.",
         "colour": "#f27aaa"
     }
@@ -197,17 +197,17 @@
     ,
     {
         "id": 39,
-        "title": "Other Diagnoses",
-        "x": 850,
-        "y": -900,
+        "title": "Lifestyle Improvement Advice",
+        "x": 25,
+        "y": -69,
         "colour": "#33ccff"
     }
     ,
     {
         "id": 40,
-        "title": "Lifestyle Improvement Advice",
-        "x": 850,
-        "y": -800,
-        "colour": "#ee2b2f"
+        "title": "Measure Blood Pressure",
+        "x": 25,
+        "y": -75,
+        "colour": "#f92828"
     }
 ]
