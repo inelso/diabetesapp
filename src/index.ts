@@ -15,25 +15,30 @@
  */
 /* eslint-disable no-undef, @typescript-eslint/no-unused-vars, no-unused-vars */
 import "./style.css";
+
 import background from './static/background.png';
 import assessment from './static/assessment.png';
+import diagnosis from './static/DIAGNOSES.png';
+import management from './static/management.png';
+
 import nodes from './static/nodes.json';
 import edges from './static/edge.json';
-import { getEffectiveConstraintOfTypeParameter, getPositionOfLineAndCharacter } from "typescript";
+import groups from './static/groups.json';
 
-// This example uses a GroundOverlay to place an image on the map
-// showing an antique map of Newark, NJ.
+const calibrateX: number = 0;
+const calibrateY: number = -20;
+
+const minZoom = 5;
+const maxZoom = 6;
+const minZoomEdgeStroke = 10;
+const maxZoomEdgeStroke = 20;
 
 let backgroundOverlay;
-let assessmentOverlay;
 var markers : google.maps.Marker[] = [];
 
 // Add the image to our existing div.
 const backgroundIcon = new Image();
 backgroundIcon.src = background;
-
-const assessmentIcon = new Image();
-assessmentIcon.src = assessment;
 
 function initMap(): void {
  
@@ -44,23 +49,29 @@ function initMap(): void {
     east: 120.1,
     west: -120.1,
   };
-  const center = { lat: 0, lng: 0 };
-  const zoomOptions = { minZoom: 4, maxZoom: 5 };
+  const mapRestriction = {
+    north: 30,
+    south: -30,
+    east: 40,
+    west: -40,
+  };
+  const center = { lat: 22, lng: 0 };
 
   const map = new google.maps.Map(
     document.getElementById("map") as HTMLElement,
     {
-      zoom: 6,
+      zoom: 4,
       center: center,
       restriction: {
-        latLngBounds: backgroundBounds,
-        strictBounds: false,
+        latLngBounds: mapRestriction,
+        strictBounds: true,
       }
     }
   );
 
+  const zoomOptions = { minZoom: minZoom, maxZoom: maxZoom };
   map.setOptions(zoomOptions);
-  map.fitBounds(backgroundBounds);
+  map.fitBounds(mapRestriction);
 
   backgroundOverlay = new google.maps.GroundOverlay(
     backgroundIcon.src,
@@ -75,7 +86,7 @@ function initMap(): void {
     let pathToPush : google.maps.LatLngLiteral[] = [];
     for (let lineIndex = 0; lineIndex < path.length; lineIndex++) {
       let line = path[lineIndex];
-      pathToPush.push({ lat: line.y, lng: line.x });
+      pathToPush.push({ lat: line.y + calibrateY, lng: line.x + calibrateX });
     }
 
     let polyline = new google.maps.Polyline({
@@ -83,49 +94,34 @@ function initMap(): void {
       geodesic: false,
       strokeColor: "#52C4F1",
       strokeOpacity: 1.0,
-      strokeWeight: (map.getZoom() == 4) ? 10 : 20,
+      strokeWeight: (map.getZoom() == minZoom) ? minZoomEdgeStroke : maxZoomEdgeStroke,
     });
     polyline.setMap(map);
 
     // Listener for edge width resize
     google.maps.event.addListener(map, 'zoom_changed', function() {
       let zoom = map.getZoom();
-      if (zoom == 4) {
-        polyline.setOptions({strokeWeight: 10});
-      } else if (zoom == 5) {
-        polyline.setOptions({strokeWeight: 20});
+      if (zoom == minZoom) {
+        polyline.setOptions({strokeWeight: minZoomEdgeStroke});
+      } else if (zoom == maxZoom) {
+        polyline.setOptions({strokeWeight: maxZoomEdgeStroke});
       }
     });
   }
 
-  // Asssessment Icon
-  // TODO: Will add these icons in a JSON, similar to nodes and edges
-  const assessmentBounds = {
-    north: 3,
-    south: -3, 
-    east: 4, 
-    west: -4,
-  };
-
-  assessmentOverlay = new google.maps.GroundOverlay(
-    assessmentIcon.src,
-    assessmentBounds
-  );
-  assessmentOverlay.setMap(map);
-
   // Draw nodes
   for (let i = 0; i < nodes.length; i++) {
     let nodeData = nodes[i];
-    let center = { lat: nodeData.y, lng: nodeData.x };
+    let center = { lat: nodeData.y + calibrateY, lng: nodeData.x + calibrateX};
     const node = new google.maps.Circle({
       strokeColor: "#FFFFFF",
       strokeOpacity: 1,
-      strokeWeight: 4,
-      fillColor: "#932B8F",
+      strokeWeight: 2,
+      fillColor: nodeData.colour,
       fillOpacity: 1,
       map,
       center: center,
-      radius: 200000,
+      radius: 60000,
     });
 
     // Marker to hold the label
@@ -167,5 +163,26 @@ function initMap(): void {
       map.panTo(marker.getPosition()!);
     });
   }
+
+  // Set static icons
+  let assessmentOverlay = 
+    generateOverlay(assessment, {east: groups[0].east, west: groups[0].west, north: groups[0].north, south: groups[0].south});
+  assessmentOverlay.setMap(map);
+
+  let diagnosesOverlay = 
+    generateOverlay(diagnosis, {east: groups[1].east, west: groups[1].west, north: groups[1].north, south: groups[1].south});
+  diagnosesOverlay.setMap(map);
+
+  let managementOverlay = 
+    generateOverlay(management, {east: groups[2].east, west: groups[2].west, north: groups[2].north, south: groups[2].south});
+  managementOverlay.setMap(map);
 }
+
+function generateOverlay(image: any, boundaries: google.maps.LatLngBoundsLiteral): google.maps.GroundOverlay {
+  return new google.maps.GroundOverlay(
+    image,
+    boundaries
+  );
+}
+
 export { initMap };

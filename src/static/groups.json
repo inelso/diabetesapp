@@ -1,0 +1,23 @@
+[
+    {
+        "id": "assessments",
+        "north": 21,
+        "south": 14,
+        "east": 3.7,
+        "west": -4.2
+    },
+    {
+        "id": "diagnoses",
+        "north": 2,
+        "south": -5,
+        "east": 3.7,
+        "west": -4.2
+    }, 
+    {
+        "id": "management",
+        "north": -6,
+        "south": -16,
+        "east": 23.0,
+        "west": 15.0
+    }
+]
