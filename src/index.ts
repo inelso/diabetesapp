@@ -43,6 +43,7 @@ const BLUE = "#52C4F1";
 
 let backgroundOverlay;
 var markers : google.maps.Marker[] = [];
+var labels : google.maps.Marker[] = [];
 
 // Add the image to our existing div.
 const backgroundIcon = new Image();
@@ -106,13 +107,19 @@ function initMap(): void {
     });
     polyline.setMap(map);
 
-    // Listener for edge width resize
+    // Listener for edge width resize and static label markers
     google.maps.event.addListener(map, 'zoom_changed', function() {
       let zoom = map.getZoom();
       if (zoom == minZoom) {
         polyline.setOptions({strokeWeight: minZoomEdgeStroke});
+        labels.forEach(label => {
+          label.setVisible(false);
+        });
       } else if (zoom == maxZoom) {
         polyline.setOptions({strokeWeight: maxZoomEdgeStroke});
+        labels.forEach(label => {
+          label.setVisible(true);
+        });
       }
     });
   }
@@ -149,6 +156,7 @@ function initMap(): void {
       visible: true
     });
     labelStaticMarker.setLabel({text: nodeData.title!, fontWeight: "bold"});
+    labels.push(labelStaticMarker);
 
     let marker = new google.maps.Marker({
       position: center,
