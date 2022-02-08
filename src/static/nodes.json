@@ -7,8 +7,8 @@
         "description": "<p><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Types of Screening</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'><h3>Systematic Strategy</h3>For the screening of DM and atherosclerosis risk factors, a systematic strategy should be used to identify people who are likely to be at high risk.<br/><br/><h3>Opportunistic Assessment</h3>Opportunistic assessment can also be used to identify ASCVD risk in the population but should not be the main strategy.</div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Who to Screen?</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>Screen the following people for prediabetes, T2DM and related ASCVD risk factors:<ul><li>Everyone over the age of 40 years.</li><li>Everyone ≥ 30 years of age with a BMI of ≥23.</li><li>All women with a history of either GDM or PCOS.</li><li>All people with a BMI ≥27 kg/m2.</li><li>Screen all adults with two or more of the following risk factors.</li></ul></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample3' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Risk Factors</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample3'><div class='card card-body'><ul><li>BMI ≥23 to <27 kg/m2.</li><li>First-degree relative with DM.</li><li>First-degree relative with CVD at young age (<55 years for a male relative and <65 year for a female relative).</li><li>High-risk race/ethnicity.</li><li>History of CVD.</li><li>Hypertension (BP ≥140/90 mmHg or on therapy for hypertension).</li><li>Dyslipidaemia: HDL cholesterol level <0.90 mmol/L (35 mg/dL), a triglyceride level >2.82 mmol/L (250 mg/dL), LDL cholesterol level >3.11 mmol/L (120 mg/dL), total cholesterol level >6.18 mmol/L (240 mg/dL), and/or non-HDL cholesterol > 3.63 mmol/L (150 mg/dL); or the patient is on a lipid lowering medication.</li><li>Physical inactivity.</li><li>Tobacco use.</li><li>Other clinical conditions associated with insulin resistance.</li></ul></div></div>",
         "colour": "#932b8f",
         "label": {
-            "x": -130,
-            "y": 0
+            "x": -118,
+            "y": -2
         }
     },
     {
@@ -19,7 +19,7 @@
         "description": "<h3>Non-Modifiable Risk Factors</h3><table class='table'><thead><tr><th scope='col'>Non-Modifiable Risk Factor</th><th scope='col'>ASCVD Risk Factor</th><th scope='col'>T2DM Risk Factor</th></tr></thead><tbody><tr><th scope='row'>Age</th><td>Age > 40 years</td><td>Age ≥40 years</td></tr><tr><th scope='row'>Gender</th><td>Men have a higher prevalence of coronary artery disease until the age of 75 years.</td><td>Women with a previous history of GDM or previous delivery of a baby weighing ≥4 kg (9 lb) are at higher risk of diabetes</td></tr><tr><th scope='row'>Family history</th><td>Family history of premature ASCVD.</td><td>Family history of T2DM.</td></tr><tr><th scope='row'>Ethnicity</th><td colspan='2'>Member of an at-risk racial or ethnic subgroup e.g. South Asian.</td></tr></tbody></table><br/><h3>Modifiable Risk Factors</h3><table class='table'><thead><tr><th scope='col'>Modifiable Risk Factor</th><th scope='col'>ASCVD Risk Factor</th><th scope='col'>T2DM Risk Factor</th></tr></thead><tbody><tr><th scope='row'>Metabolic syndrome</th><td>Age >Yes</td><td>Yes</td></tr><tr><th scope='row'>Impaired glucose metabolism</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Diabetes mellitus</th><td>Yes</td><td>Diagnosed</td></tr><tr><th scope='row'>Hypertension</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Dyslipidaemia</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Tobacco use</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Sedentary lifestyle</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Unhealthy diet</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Psychosocial stress</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Overweight</th><td>Yes</td><td>Yes</td></tr></tbody></table>",
         "colour": "#932b8f",
         "label": {
-            "x": -130,
+            "x": -115,
             "y": 0
         }
     },
@@ -31,7 +31,7 @@
         "description": "<p><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Who to Screen?</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'>Screening for undiagnosed depression and anxiety should be performed in all adults, including pregnant and postpartum women, who are to be screened for ASCVD or DM.</div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>How to Screen?</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>Use the PHQ-2 and GAD-2 questions for initial screening for depression and anxiety. If a patient answers positively to the PHQ-2 and/or GAD-2 questions, they should be assessed using the PHQ-9 and/ or GAD-7 questions, respectively, and be seen by a physician.</div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample3' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Additional Assessments</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample3'><div class='card card-body'>All positive screening results should lead to additional assessment that considers:<ul><li>The severity of depression and anxiety.</li><li>First-degree relative with DM.</li><li>Comorbid psychological problems (e.g., anxiety, panic attacks, or substance abuse).</li><li>Other medical conditions.</li></ul></div></div>",
         "colour": "#932b8f",
         "label": {
-            "x": 200,
+            "x": 173,
             "y": 0
         }
     },
@@ -43,7 +43,7 @@
         "description": "<p><br/><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:black;'>BMI Calculation:</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'>Calculate the BMI by measuring weight in kilograms and height in metres.<br/><span style='color:yellow;'>Info/Note:</span>&nbsp;BMI should be interpreted with caution because the calculation alone it is not a direct measure of adiposity, especially in highly muscular adults. Do not use bio-impedance as a substitute for BMI as evidence to support its use is lacking at present.<br/><br/></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:black;'>Obesity</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>Obesity is commonly defined by a measurement of BMI of ≥30 kg/m2 in Western populations, however different ethnic-specific cut points for defining obesity may need to be considered. Emerging evidence points towards lower BMI levels being associated with greater risk for metabolic diseases based on ethnicity.<br/><span style='color:yellow;'>Table or graphic:</span>&nbsp;The degree of overweight and obesity can be classified as:<br/><ul><li>BMI 25.00 - 29.99 kg/m2 – Overweight.</li><li>BMI 30.00 - 34.99 kg/m2 − Obesity Class I.</li><li>BMI 35.00 - 39.99 kg/m2 − Obesity Class II.</li><li>BMI ≥40.00 kg/m2 − Obesity Class III (extreme obesity).</li></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample3' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Risks Associated with BMI</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample3'><div class='card card-body'>1. Adults are identified at increased risk for CVD at:<br/><ul><li>BMI 25.00 - 29.99 kg/m2 – Overweight</li><li>BMI ≥30 kg/m2 – Obesity</li></ul>2. Adults are identified at increased risk for of death from all causes at BMI ≥30 kg/m2 (Obesity).</div></div>",
         "colour": "#932b8f",
         "label": {
-            "x": -100,
+            "x": -69,
             "y": 0
         }
     },
@@ -55,7 +55,7 @@
         "description": "<p><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Process</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'>Follow the WHO STEPS protocol for measuring waist circumference:<br/>Measure waist circumference, locate the upper hip bone and the top of the right iliac crest. Place a measuring tape in a horizontal plane around the abdomen at the level of the iliac crest. Before reading the tape measure, ensure that the tape is snug, but does not compress the skin, and is parallel to the floor. The measurement is made at the end of a normal expiration.<br/><br/></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Who to measure?</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>Consider measuring waist circumference in people with a BMI ≤35 kg/m2.</div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample3' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Waist Circumference Threshold</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample3'><div class='card card-body'>For screening and risk assessment purposes in people of Middle Eastern ethnicity, use a waist circumference threshold of ≥90 cm (35 inches) in men and ≥80 cm (31.5 inches) in women for diagnosing central adiposity. However, thresholds for acceptable waist circumferences vary between ethnic groups. The table below outlines the upper limits of acceptable waist circumferences in different ethnic groups.<br/><table class='table'><thead><tr><th scope='col'>Ethnic Group</th><th scope='col'>Waist Circumference Thresholds</th></tr></thead><tbody><tr><th scope='row'>European</th><td>Men<br/>Women</td><td>≥ 94 cm (37 inches)≥ 80 cm (31.5 inches)</td></tr><tr><th scope='row'>South Asian, Chinese or Japanese</th><td>Men<br/>Women</td><td>≥ 90 cm (35 inches) ≥ 80 cm (31.5 inches)</td></tr><tr><th scope='row'>Middle Eastern</th><td colspan='2'>Use South Asian recommendations until more specific data are available [R-GDG].</td></tr><tr><th scope='row'>Ethnic south and central American</th><td colspan='2'>Use South Asian recommendations until more specific data are available</td></tr><tr><th scope='row'>Sub-Saharan African</th><td> colspan='2'>Use European data until more specific data are available</td></tbody></table></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample4' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Risks Associated with Waist Circumference</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample4'><div class='card card-body'>Waist circumference along with BMI can be used as a measure to assess risk; however, if the BMI is >35 kg/m2, the waist circumference does not add to the absolute measure of risk. A larger waist circumference is a recognised risk factor of developing atherosclerosis and DM in an individual.</div></div>",
         "colour": "#932b8f",
         "label": {
-            "x": -135,
+            "x": -121,
             "y": 0
         }
     },
@@ -67,7 +67,7 @@
         "description":"Neck circumference (NC) is considered a simple and accurate way of assessing overweight and obesity in adults.<br/><br/><p><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Process</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'>NC should be measured with the individual standing erect with their head positioned in the horizontal plane. The superior border of a tape measure should be placed just below the laryngeal prominence and applied perpendicular to the long axis of the neck.<br/><br/></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Neck Circumference Threshold</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>NC above ≥40 cm in Caucasian men and ≥34cm in Caucasian women are associated with increased cardio-metabolic risk. Precise cut-offs in the Qatari population remain to be determined.</div></div>",
         "colour": "#932b8f",
         "label": {
-            "x": 135,
+            "x": -121,
             "y": 0
         }
     },
@@ -78,7 +78,7 @@
         "y": 28,
         "colour": "#932b8f",
         "label": {
-            "x": 120,
+            "x": -111,
             "y": 0
         }
     },   
@@ -88,42 +88,66 @@
         "x": 0,
         "y": 24,
         "description":"Undertake the following screening blood tests:<ul><li>Glycated haemoglobin (HBA1c).</li><li>Fasting glucose (if possible).</li><li>Fasting or non-fasted, lipids.</li></ul><span style='color:yellow;'>Info/Note:</span>&nbsp;When using HBA1c, it should be noted that:<ul><li>Using HBA1c to screen for prediabetes may be problematic in adults with certain haemoglobinopathies or conditions that affect red blood cell turnover.</li><li>Testing should be performed in a laboratory using a method that is NGSP-certified and standardised to the DCCT assay.</li></ul>",
-        "colour": "#932b8f"
+        "colour": "#932b8f",
+        "label": {
+            "x": -65,
+            "y": 0
+        }
     },  
     {
         "id": 13,
         "title": "ASCVD Risk Calculation",
         "x": 0,
         "y": 22,
-        "colour": "#932b8f"
+        "colour": "#932b8f",
+        "label": {
+            "x": -105,
+            "y": 0
+        }
     },
     {
         "id": 28,
         "title": "Diagnosis of T2DM",
         "x": -15,
         "y": 14,
-        "colour": "#f27aaa"
+        "colour": "#f27aaa",
+        "label": {
+            "x": -89,
+            "y": 0
+        }
     },
     {
         "id": 29,
         "title": "Management of T2DM",
         "x": -15,
         "y": 10,
-        "colour": "#ee2b2f"
+        "colour": "#ee2b2f",
+        "label": {
+            "x": -98,
+            "y": 0
+        }
     },
     {
         "id": 31,
         "title": "Diagnosis of Prediabetes",
         "x": -5,
         "y": 14,
-        "colour": "#f27aaa"
+        "colour": "#f27aaa",
+        "label": {
+            "x": -109,
+            "y": 0
+        }
     },
     {
         "id": 32,
         "title": "Management of Prediabetes",
         "x": -5,
         "y": 10,
-        "colour": "#ee2b2f"
+        "colour": "#ee2b2f",
+        "label": {
+            "x": -115,
+            "y": 0
+        }
     },
     {
         "id": 34,
@@ -131,7 +155,11 @@
         "x": 5,
         "y": 14,
         "description":"When there is no diagnosis of Diabetes Mellitus (DM) or prediabetes, diabetes risk calculation should be the next step.",
-        "colour": "#f27aaa"
+        "colour": "#f27aaa",
+        "label": {
+            "x": -137,
+            "y": 0
+        }
     },
     {
         "id": 35,
@@ -139,7 +167,11 @@
         "x": 5,
         "y": 10,
         "description":"Risk assessment tool for those not identified with prediabetes or diabetes:<ul><li>The ADA risk calculator should be used to calculate the risk of developing diabetes.</li><li>A score of ≥5 indicates an increased risk of T2DM.</li></ul><span style='color:red;'>Info:</span>&nbsp;Confirmation by a doctor of a diagnosis of T2DM or prediabetes is recommended.<br/>Link: <a href='https://www.diabetes.org/risk-test'>Risk Test</a>",
-        "colour": "#ee2b2f"
+        "colour": "#ee2b2f",
+        "label": {
+            "x": -110,
+            "y": 0
+        }
     },
     {
         "id": 37,
@@ -147,20 +179,32 @@
         "x": 15,
         "y": 14,
         "description":"Some other conditions can also be diagnosed during diabetes screening:<br/><ul><li>Dyslipidemia</li><li>Hypertension</li><li>Overweight or obesity</li><li>Cessation of tobacco use</li><li>Depression</li></ul>Refer to the <a href='https://www.moph.gov.qa/english/OurServices/eservices/Pages/Clinical-Guidelines.aspx'>MOPH National Clinical Guidelines</a> for detailed information on management.",
-        "colour": "#f27aaa"
+        "colour": "#f27aaa",
+        "label": {
+            "x": -80,
+            "y": 0
+        }
     },
     {
         "id": 39,
         "title": "Lifestyle Improvement Advice",
         "x": 10,
         "y": 6,
-        "colour": "#f92828"
+        "colour": "#f92828",
+        "label": {
+            "x": -123,
+            "y": 0
+        }
     },
     {
         "id": 40,
         "title": "Measure Blood Pressure",
         "x": 10,
         "y": 4,
-        "colour": "#f92828"
+        "colour": "#f92828",
+        "label": {
+            "x": -110,
+            "y": 0
+        }
     }
 ]
