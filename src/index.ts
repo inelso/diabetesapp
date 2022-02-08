@@ -24,6 +24,10 @@ import management from './static/management.png';
 import nodes from './static/nodes.json';
 import edges from './static/edge.json';
 import groups from './static/groups.json';
+//require('bootstrap/dist/css/bootstrap.css');
+//import 'bootstrap';
+
+declare var $: any;
 
 const calibrateX: number = 0;
 const calibrateY: number = -20;
@@ -159,6 +163,12 @@ function initMap(): void {
       });
 
       // Set specific marker to visible and center on it
+
+      /*Bootstrap Modal Pop Up Open Code*/
+      $(".modal-title").text(nodeData.title);
+      $(".modal-body").html(nodeData.description);
+      $("#myModal").modal('show');
+
       marker.setVisible(true);
       map.panTo(marker.getPosition()!);
     });
