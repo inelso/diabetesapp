@@ -1,23 +1,67 @@
 [
     {
         "id": "assessments",
+        "title": "Assessments",
         "north": 21,
         "south": 14,
         "east": 3.7,
-        "west": -4.2
+        "west": -4.2,
+        "x": 23,
+        "y": 33,
+        "hasText": true,
+        "colour": "#52C4F1",
+        "size": "32px"
     },
     {
         "id": "diagnoses",
+        "title": "Diagnoses",
         "north": 2,
         "south": -5,
         "east": 3.7,
-        "west": -4.2
+        "west": -4.2,
+        "x": 20,
+        "y": 19,
+        "hasText": true,
+        "colour": "#52C4F1",
+        "size": "32px"
     }, 
     {
         "id": "management",
+        "title": "Management",
         "north": -6,
         "south": -16,
-        "east": 23.0,
-        "west": 15.0
+        "east": 24.0,
+        "west": 15.0,
+        "x": -10,
+        "y": 6,
+        "hasText": true,
+        "colour": "#52C4F1",
+        "size": "32px"
+    },
+    {
+        "id": "symbols",
+        "title": "Symbols",
+        "east": 40, 
+        "west": 15, 
+        "north": 25, 
+        "south": 15,
+        "x": 0,
+        "y": 0,
+        "hasText": false,
+        "colour": "#52C4F1",
+        "size": "32px"
+    },
+    {
+        "id": "logo",
+        "title": "Ministry of Public Health",
+        "east": -30, 
+        "west": -35, 
+        "north": 21, 
+        "south": 16,
+        "x": -23,
+        "y": 38.5,
+        "hasText": true,
+        "colour": "#89162F",
+        "size": "24px"
     }
 ]

@@ -20,6 +20,8 @@ import background from './static/background.png';
 import assessment from './static/assessment.png';
 import diagnosis from './static/DIAGNOSES.png';
 import management from './static/management.png';
+import symbols from './static/symbols.png';
+import logo from './static/MOPH-logo.png';
 
 import nodes from './static/nodes.json';
 import edges from './static/edge.json';
@@ -36,6 +38,8 @@ const minZoom = 5;
 const maxZoom = 6;
 const minZoomEdgeStroke = 10;
 const maxZoomEdgeStroke = 20;
+
+const BLUE = "#52C4F1";
 
 let backgroundOverlay;
 var markers : google.maps.Marker[] = [];
@@ -96,7 +100,7 @@ function initMap(): void {
     let polyline = new google.maps.Polyline({
       path: pathToPush,
       geodesic: false,
-      strokeColor: "#52C4F1",
+      strokeColor: BLUE,
       strokeOpacity: 1.0,
       strokeWeight: (map.getZoom() == minZoom) ? minZoomEdgeStroke : maxZoomEdgeStroke,
     });
@@ -186,6 +190,32 @@ function initMap(): void {
   let managementOverlay = 
     generateOverlay(management, {east: groups[2].east, west: groups[2].west, north: groups[2].north, south: groups[2].south});
   managementOverlay.setMap(map);
+
+  // Set symbols and logo
+  let symbolsOverlay = 
+    generateOverlay(symbols, {east: groups[3].east, west: groups[3].west, north: groups[3].north, south: groups[3].south});
+  symbolsOverlay.setMap(map);
+
+  let logoOverlay = 
+    generateOverlay(logo, {east: groups[4].east, west: groups[4].west, north: groups[4].north, south: groups[4].south});
+    logoOverlay.setMap(map);
+
+  // Set texts
+  groups.forEach(group => {
+    if (group.hasText) {
+      let labelStaticMarker = new google.maps.Marker({
+        position: { lat: group.y + calibrateY, lng: group.x + calibrateX},
+        map: map,
+        icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 1,
+            strokeColor: BLUE
+        },
+        visible: true
+      });
+      labelStaticMarker.setLabel({text: group.title, fontWeight: "bold", color: group.colour, fontSize: group.size, fontFamily: "Helvetica"});
+    }
+  });
 }
 
 function generateOverlay(image: any, boundaries: google.maps.LatLngBoundsLiteral): google.maps.GroundOverlay {
