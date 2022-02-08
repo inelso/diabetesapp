@@ -60,11 +60,11 @@ function initMap(): void {
   const map = new google.maps.Map(
     document.getElementById("map") as HTMLElement,
     {
-      zoom: 4,
+      zoom: 5,
       center: center,
       restriction: {
         latLngBounds: mapRestriction,
-        strictBounds: true,
+        strictBounds: false,
       }
     }
   );
