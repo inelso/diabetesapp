@@ -3,8 +3,8 @@ const app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-app.listen(3000, () => {
-  console.log("Application started and Listening on port 3000");
+app.listen((process.env.PORT || 80), () => {
+  console.log("Application started and Listening on port 80");
 });
 
 app.get("/", (req, res) => {
