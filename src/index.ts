@@ -26,8 +26,8 @@ import logo from './static/MOPH-logo.png';
 import nodes from './static/nodes.json';
 import edges from './static/edge.json';
 import groups from './static/groups.json';
-//require('bootstrap/dist/css/bootstrap.css');
-//import 'bootstrap';
+require('bootstrap/dist/css/bootstrap.css');
+import 'bootstrap';
 
 declare var $: any;
 

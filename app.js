@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-app.listen((process.env.PORT || 80), () => {
+app.listen((process.env.PORT || 8080), () => {
   console.log("Application started and Listening on port 80");
 });
 
