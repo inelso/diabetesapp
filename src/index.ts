@@ -167,8 +167,8 @@ function initMap(): void {
     // Store the marker reference in the global array
     markers.push(marker);
 
-    // Listener on the node/shape for click event
-    google.maps.event.addListener(node, 'click', () => {
+    // Listener on the node/shape for mousedown event
+    google.maps.event.addListener(node, 'mousedown', () => {
       // Set all markers to invisible
       markers.forEach(marker => {
         marker.setVisible(false);
