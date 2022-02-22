@@ -28,22 +28,20 @@ import edges from './static/edge.json';
 import groups from './static/groups.json';
 require('bootstrap/dist/css/bootstrap.css');
 import 'bootstrap';
+import { setNodeData, generateOverlay } from "./utils";
+import { 
+  scaleNode, scaleNodeStroke, scaleEdge,
+  calibrateX, calibrateY,
+  minZoom, maxZoom, minZoomEdge, maxZoomEdge,
+  backgroundBounds, mapRestriction, center,
+  BLUE
+ } from "./constants";
 
 declare var $: any;
 
-const calibrateX: number = 0;
-const calibrateY: number = -20;
-
-const minZoom = 5;
-const maxZoom = 6;
-const minZoomEdgeStroke = 10;
-const maxZoomEdgeStroke = 20;
-
-const BLUE = "#52C4F1";
-
 let backgroundOverlay;
-var markers : google.maps.Marker[] = [];
-var labels : google.maps.Marker[] = [];
+var nodeMarkers : google.maps.Marker[] = [];
+var clickMarkers : google.maps.Marker[] = [];
 
 // Add the image to our existing div.
 const backgroundIcon = new Image();
@@ -52,24 +50,10 @@ backgroundIcon.src = background;
 function initMap(): void {
  
   // Create basic map
-  const backgroundBounds = {
-    north: 85,
-    south: -85,
-    east: 120.1,
-    west: -120.1,
-  };
-  const mapRestriction = {
-    north: 30,
-    south: -30,
-    east: 40,
-    west: -40,
-  };
-  const center = { lat: 22, lng: 0 };
-
   const map = new google.maps.Map(
     document.getElementById("map") as HTMLElement,
     {
-      zoom: 5,
+      zoom: minZoom,
       center: center,
       restriction: {
         latLngBounds: mapRestriction,
@@ -103,86 +87,65 @@ function initMap(): void {
       geodesic: false,
       strokeColor: BLUE,
       strokeOpacity: 1.0,
-      strokeWeight: (map.getZoom() == minZoom) ? minZoomEdgeStroke : maxZoomEdgeStroke,
+      strokeWeight: scaleEdge(map!.getZoom()!),
     });
     polyline.setMap(map);
 
     // Listener for edge width resize and static label markers
     google.maps.event.addListener(map, 'zoom_changed', function() {
       let zoom = map.getZoom();
-      if (zoom == minZoom) {
-        polyline.setOptions({strokeWeight: minZoomEdgeStroke});
-        labels.forEach(label => {
-          label.setVisible(false);
-        });
-      } else if (zoom == maxZoom) {
-        polyline.setOptions({strokeWeight: maxZoomEdgeStroke});
-        labels.forEach(label => {
-          label.setVisible(true);
-        });
-      }
+      polyline.setOptions({strokeWeight: scaleEdge(zoom!)});
+      nodeMarkers.forEach(nodeMarker => {
+        setNodeData(nodeMarker!, map!);
+      });
     });
   }
-
-  // Draw nodes
+  
   for (let i = 0; i < nodes.length; i++) {
+    // Generate marker and store the reference in the global array
     let nodeData = nodes[i];
     let center = { lat: nodeData.y + calibrateY, lng: nodeData.x + calibrateX};
-    const node = new google.maps.Circle({
-      strokeColor: "#FFFFFF",
-      strokeOpacity: 1,
-      strokeWeight: 2,
-      fillColor: nodeData.colour,
-      fillOpacity: 1,
-      map,
-      center: center,
-      radius: 60000,
-    });
-
-    // Marker to hold the label
-    // We set a circle with the very small scale (1), so that the labelOrigin can work
-    // otherwise if the scale is 0, the labelOrigin does not work
-    let labelStaticMarker = new google.maps.Marker({
+    const node = new google.maps.Marker({
+      title: nodeData[i],
       position: center,
       map: map,
       icon: {
           path: google.maps.SymbolPath.CIRCLE,
-          scale: 1,
-          strokeColor: nodeData.colour,
-          labelOrigin: new google.maps.Point(
-            nodeData!.label != undefined ? nodeData.label.x : 0, 
-            nodeData!.label != undefined ? nodeData.label.y : 0)
+          fillOpacity: 1,
+          fillColor: nodeData.colour,
+          scale: scaleNode(map.getZoom()!),
+          strokeColor: "#FFFFFF",
+          strokeWeight: scaleNodeStroke(map!.getZoom()!)
       },
-      visible: true
+      visible: true,
+      clickable: true
     });
-    labelStaticMarker.setLabel({text: nodeData.title!, fontWeight: "bold"});
-    labels.push(labelStaticMarker);
+    node.setValues({"id": nodeData.id})
+    nodeMarkers.push(node);
 
-    let marker = new google.maps.Marker({
+    // Marker to hold the arrow when the node is clicked
+    let clickMarker = new google.maps.Marker({
       position: center,
       map: map,
       visible: false
     });
-    
-    // Store the marker reference in the global array
-    markers.push(marker);
+    clickMarkers.push(clickMarker);
 
     // Listener on the node/shape for mousedown event
     google.maps.event.addListener(node, 'mousedown', () => {
       // Set all markers to invisible
-      markers.forEach(marker => {
-        marker.setVisible(false);
+      clickMarkers.forEach(arrows => {
+        arrows.setVisible(false);
       });
 
       // Set specific marker to visible and center on it
+      clickMarker.setVisible(true);
+      map.panTo(node.getPosition()!);
 
       /*Bootstrap Modal Pop Up Open Code*/
       $(".modal-title").text(nodeData.title);
       $(".modal-body").html(nodeData.description);
       $("#myModal").modal('show');
-
-      marker.setVisible(true);
-      map.panTo(marker.getPosition()!);
     });
   }
 
@@ -224,13 +187,6 @@ function initMap(): void {
       labelStaticMarker.setLabel({text: group.title, fontWeight: "bold", color: group.colour, fontSize: group.size, fontFamily: "Helvetica"});
     }
   });
-}
-
-function generateOverlay(image: any, boundaries: google.maps.LatLngBoundsLiteral): google.maps.GroundOverlay {
-  return new google.maps.GroundOverlay(
-    image,
-    boundaries
-  );
 }
 
 export { initMap };

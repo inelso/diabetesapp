@@ -1,42 +1,42 @@
 [
     {
-        "id": 1,
+        "id": 0,
         "title": "Identify People for Screening",
         "x": 0,
         "y": 34,
         "description": "<p><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Types of Screening</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'><h3>Systematic Strategy</h3>For the screening of DM and atherosclerosis risk factors, a systematic strategy should be used to identify people who are likely to be at high risk.<br/><br/><h3>Opportunistic Assessment</h3>Opportunistic assessment can also be used to identify ASCVD risk in the population but should not be the main strategy.</div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Who to Screen?</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>Screen the following people for prediabetes, T2DM and related ASCVD risk factors:<ul><li>Everyone over the age of 40 years.</li><li>Everyone ≥ 30 years of age with a BMI of ≥23.</li><li>All women with a history of either GDM or PCOS.</li><li>All people with a BMI ≥27 kg/m2.</li><li>Screen all adults with two or more of the following risk factors.</li></ul></div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample3' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Risk Factors</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample3'><div class='card card-body'><ul><li>BMI ≥23 to <27 kg/m2.</li><li>First-degree relative with DM.</li><li>First-degree relative with CVD at young age (<55 years for a male relative and <65 year for a female relative).</li><li>High-risk race/ethnicity.</li><li>History of CVD.</li><li>Hypertension (BP ≥140/90 mmHg or on therapy for hypertension).</li><li>Dyslipidaemia: HDL cholesterol level <0.90 mmol/L (35 mg/dL), a triglyceride level >2.82 mmol/L (250 mg/dL), LDL cholesterol level >3.11 mmol/L (120 mg/dL), total cholesterol level >6.18 mmol/L (240 mg/dL), and/or non-HDL cholesterol > 3.63 mmol/L (150 mg/dL); or the patient is on a lipid lowering medication.</li><li>Physical inactivity.</li><li>Tobacco use.</li><li>Other clinical conditions associated with insulin resistance.</li></ul></div></div>",
         "colour": "#932b8f",
         "label": {
-            "x": -118,
-            "y": -2
+            "x": -10,
+            "y": -1
         }
     },
     {
-        "id": 2,
+        "id": 1,
         "title": "ASCVD and DM Risk Factors",
         "x": 0,
         "y": 32,
         "description": "<h3>Non-Modifiable Risk Factors</h3><table class='table'><thead><tr><th scope='col'>Non-Modifiable Risk Factor</th><th scope='col'>ASCVD Risk Factor</th><th scope='col'>T2DM Risk Factor</th></tr></thead><tbody><tr><th scope='row'>Age</th><td>Age > 40 years</td><td>Age ≥40 years</td></tr><tr><th scope='row'>Gender</th><td>Men have a higher prevalence of coronary artery disease until the age of 75 years.</td><td>Women with a previous history of GDM or previous delivery of a baby weighing ≥4 kg (9 lb) are at higher risk of diabetes</td></tr><tr><th scope='row'>Family history</th><td>Family history of premature ASCVD.</td><td>Family history of T2DM.</td></tr><tr><th scope='row'>Ethnicity</th><td colspan='2'>Member of an at-risk racial or ethnic subgroup e.g. South Asian.</td></tr></tbody></table><br/><h3>Modifiable Risk Factors</h3><table class='table'><thead><tr><th scope='col'>Modifiable Risk Factor</th><th scope='col'>ASCVD Risk Factor</th><th scope='col'>T2DM Risk Factor</th></tr></thead><tbody><tr><th scope='row'>Metabolic syndrome</th><td>Age >Yes</td><td>Yes</td></tr><tr><th scope='row'>Impaired glucose metabolism</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Diabetes mellitus</th><td>Yes</td><td>Diagnosed</td></tr><tr><th scope='row'>Hypertension</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Dyslipidaemia</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Tobacco use</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Sedentary lifestyle</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Unhealthy diet</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Psychosocial stress</th><td>Yes</td><td>Yes</td></tr><tr><th scope='row'>Overweight</th><td>Yes</td><td>Yes</td></tr></tbody></table>",
         "colour": "#932b8f",
         "label": {
-            "x": -115,
+            "x": -10,
             "y": 0
         }
     },
     {
-        "id": 3,
+        "id": 2,
         "title": "Depression & Anxiety \nScreening & Assessment",
         "x": 2,
         "y": 32,
         "description": "<p><a class='btn btn-light' data-bs-toggle='collapse' href='#collapseExample1' role='button' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Who to Screen?</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></a><div class='collapse' id='collapseExample1'><div class='card card-body'>Screening for undiagnosed depression and anxiety should be performed in all adults, including pregnant and postpartum women, who are to be screened for ASCVD or DM.</div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample2' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>How to Screen?</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample2'><div class='card card-body'>Use the PHQ-2 and GAD-2 questions for initial screening for depression and anxiety. If a patient answers positively to the PHQ-2 and/or GAD-2 questions, they should be assessed using the PHQ-9 and/ or GAD-7 questions, respectively, and be seen by a physician.</div></div><button class='btn btn-light' type='button' data-bs-toggle='collapse' data-bs-target='#collapseExample3' aria-expanded='false' aria-controls='collapseExample'><span style='color:red;'>Additional Assessments</span>&nbsp;&nbsp;&nbsp;&nbsp;<i id='arrow' class='fa fa-angle-down'></i></button><br/><br/><div class='collapse' id='collapseExample3'><div class='card card-body'>All positive screening results should lead to additional assessment that considers:<ul><li>The severity of depression and anxiety.</li><li>First-degree relative with DM.</li><li>Comorbid psychological problems (e.g., anxiety, panic attacks, or substance abuse).</li><li>Other medical conditions.</li></ul></div></div>",
         "colour": "#932b8f",
         "label": {
-            "x": 173,
+            "x": 10,
             "y": 0
         }
     },
     {
-        "id": 4,
+        "id": 3,
         "title": "Measure BMI",
         "x": -15,
         "y": 28,
@@ -48,7 +48,7 @@
         }
     },
     {
-        "id": 5,
+        "id": 4,
         "title": "Measure Waist Circumference",
         "x": -5,
         "y": 28,
@@ -60,7 +60,7 @@
         }
     },
     {
-        "id": 6,
+        "id": 5,
         "title": "Measure Neck Circumference",
         "x": 5,
         "y": 28,
@@ -72,7 +72,7 @@
         }
     },
     {
-        "id": 7,
+        "id": 6,
         "title": "Measure Blood Pressure",
         "x": 15,
         "y": 28,
@@ -83,7 +83,7 @@
         }
     },   
     {
-        "id": 8,
+        "id": 7,
         "title": "Blood Tests",
         "x": 0,
         "y": 24,
@@ -95,7 +95,7 @@
         }
     },  
     {
-        "id": 13,
+        "id": 8,
         "title": "ASCVD Risk Calculation",
         "x": 0,
         "y": 22,
@@ -106,7 +106,7 @@
         }
     },
     {
-        "id": 28,
+        "id": 9,
         "title": "Diagnosis of T2DM",
         "x": -15,
         "y": 14,
@@ -117,7 +117,7 @@
         }
     },
     {
-        "id": 29,
+        "id": 10,
         "title": "Management of T2DM",
         "x": -15,
         "y": 10,
@@ -128,7 +128,7 @@
         }
     },
     {
-        "id": 31,
+        "id": 11,
         "title": "Diagnosis of Prediabetes",
         "x": -5,
         "y": 14,
@@ -139,7 +139,7 @@
         }
     },
     {
-        "id": 32,
+        "id": 12,
         "title": "Management of Prediabetes",
         "x": -5,
         "y": 10,
@@ -150,7 +150,7 @@
         }
     },
     {
-        "id": 34,
+        "id": 13,
         "title": "No Diagnosis \n of DM or Prediabetes",
         "x": 5,
         "y": 14,
@@ -162,7 +162,7 @@
         }
     },
     {
-        "id": 35,
+        "id": 14,
         "title": "Diabetes Risk Calculation",
         "x": 5,
         "y": 10,
@@ -174,7 +174,7 @@
         }
     },
     {
-        "id": 37,
+        "id": 15,
         "title": "Other Diagnoses",
         "x": 15,
         "y": 14,
@@ -186,7 +186,7 @@
         }
     },
     {
-        "id": 39,
+        "id": 16,
         "title": "Lifestyle Improvement Advice",
         "x": 10,
         "y": 6,
@@ -197,7 +197,7 @@
         }
     },
     {
-        "id": 40,
+        "id": 17,
         "title": "Measure Blood Pressure",
         "x": 10,
         "y": 4,
