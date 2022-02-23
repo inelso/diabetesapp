@@ -55,6 +55,7 @@ function initMap(): void {
     {
       zoom: minZoom,
       center: center,
+      disableDefaultUI: true,
       restriction: {
         latLngBounds: mapRestriction,
         strictBounds: false,
@@ -71,6 +72,19 @@ function initMap(): void {
     backgroundBounds
   );
   backgroundOverlay.setMap(map);
+
+  //Top Center Title
+  /* var topCenterDiv = document.createElement('DIV');
+  var topCenterTitle = document.createElement('DIV');
+  topCenterTitle.style.cursor = 'pointer';
+  topCenterTitle.innerHTML = '<h1>Diabetes Screening</h1>';
+  topCenterTitle.style.height = '100px';
+  topCenterTitle.style.width = '400px';
+  //topLeftLogo.style.zIndex = '10';
+  topCenterTitle.title = 'Click to set the map to Home';
+  topCenterDiv.appendChild(topCenterTitle);
+
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(topCenterTitle); */
 
   //Top Left logo
   var topLeftDiv = document.createElement('DIV');
@@ -101,9 +115,9 @@ function initMap(): void {
     var topRightDiv = document.createElement('DIV');
     var topRightLogo = document.createElement('DIV');
     topRightLogo.style.cursor = 'pointer';
-    topRightLogo.style.backgroundImage = "url(https://i.imgur.com/p5s5mRc.png)";
-    topRightLogo.style.height = '300px';
-    topRightLogo.style.width = '750px';
+    topRightLogo.style.backgroundImage = "url(https://i.imgur.com/9U6yse4.png)";
+    topRightLogo.style.height = '160px';
+    topRightLogo.style.width = '400px';
     topRightLogo.title = 'Click to set the map to Home';
     topRightDiv.appendChild(topRightLogo);
   
@@ -221,7 +235,7 @@ function initMap(): void {
         },
         visible: true
       });
-      labelStaticMarker.setLabel({text: group.title, fontWeight: "bold", color: group.colour, fontSize: group.size, fontFamily: "Helvetica"});
+      labelStaticMarker.setLabel({text: group.title, fontWeight: "bold", color: group.colour, fontSize: group.size, fontFamily: "Articulate"});
     }
   });
 }
