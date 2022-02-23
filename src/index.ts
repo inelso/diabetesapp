@@ -77,8 +77,8 @@ function initMap(): void {
   var topLeftLogo = document.createElement('DIV');
   topLeftLogo.style.cursor = 'pointer';
   topLeftLogo.style.backgroundImage = "url(https://i.imgur.com/eRwDjYZ.png)";
-  topLeftLogo.style.height = '180px';
-  topLeftLogo.style.width = '175px';
+  topLeftLogo.style.height = '100px';
+  topLeftLogo.style.width = '93px';
   //topLeftLogo.style.zIndex = '10';
   topLeftLogo.title = 'Click to set the map to Home';
   topLeftDiv.appendChild(topLeftLogo);
