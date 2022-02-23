@@ -16,7 +16,7 @@
 /* eslint-disable no-undef, @typescript-eslint/no-unused-vars, no-unused-vars */
 import "./style.css";
 
-import background from './static/background.png';
+import background from './static/background2.png';
 import assessment from './static/assessment.png';
 import diagnosis from './static/DIAGNOSES.png';
 import management from './static/management.png';
@@ -73,19 +73,6 @@ function initMap(): void {
   );
   backgroundOverlay.setMap(map);
 
-  //Top Center Title
-  /* var topCenterDiv = document.createElement('DIV');
-  var topCenterTitle = document.createElement('DIV');
-  topCenterTitle.style.cursor = 'pointer';
-  topCenterTitle.innerHTML = '<h1>Diabetes Screening</h1>';
-  topCenterTitle.style.height = '100px';
-  topCenterTitle.style.width = '400px';
-  //topLeftLogo.style.zIndex = '10';
-  topCenterTitle.title = 'Click to set the map to Home';
-  topCenterDiv.appendChild(topCenterTitle);
-
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(topCenterTitle); */
-
   //Top Left logo
   var topLeftDiv = document.createElement('DIV');
   var topLeftLogo = document.createElement('DIV');
@@ -139,13 +126,15 @@ function initMap(): void {
       strokeColor: BLUE,
       strokeOpacity: 1.0,
       strokeWeight: scaleEdge(map!.getZoom()!),
+      
     });
+
     polyline.setMap(map);
 
     // Listener for edge width resize and static label markers
     google.maps.event.addListener(map, 'zoom_changed', function() {
       let zoom = map.getZoom();
-      polyline.setOptions({strokeWeight: scaleEdge(zoom!)});
+      polyline.setOptions({strokeWeight: scaleEdge(zoom!), zIndex: 1000000000000000});
       nodeMarkers.forEach(nodeMarker => {
         setNodeData(nodeMarker!, map!);
       });
@@ -205,9 +194,11 @@ function initMap(): void {
     generateOverlay(assessment, {east: groups[0].east, west: groups[0].west, north: groups[0].north, south: groups[0].south});
   assessmentOverlay.setMap(map);
 
+
   let diagnosesOverlay = 
-    generateOverlay(diagnosis, {east: groups[1].east, west: groups[1].west, north: groups[1].north, south: groups[1].south});
-  diagnosesOverlay.setMap(map);
+    generateOverlay(diagnosis, {east: groups[1].east, west: groups[1].west, north: groups[1].north, south: groups[1].south});  
+    diagnosesOverlay.setMap(map);
+
 
   let managementOverlay = 
     generateOverlay(management, {east: groups[2].east, west: groups[2].west, north: groups[2].north, south: groups[2].south});
