@@ -95,7 +95,7 @@ function initMap(): void {
   bottomRightLogo.title = 'Click to set the map to Home';
   bottomRightDiv.appendChild(bottomRightLogo);
 
-  map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(bottomRightLogo);
+  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(bottomRightLogo);
 
     //Top Right logo
     var topRightDiv = document.createElement('DIV');
