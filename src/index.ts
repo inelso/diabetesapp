@@ -72,6 +72,43 @@ function initMap(): void {
   );
   backgroundOverlay.setMap(map);
 
+  //Top Left logo
+  var topLeftDiv = document.createElement('DIV');
+  var topLeftLogo = document.createElement('DIV');
+  topLeftLogo.style.cursor = 'pointer';
+  topLeftLogo.style.backgroundImage = "url(https://i.imgur.com/eRwDjYZ.png)";
+  topLeftLogo.style.height = '180px';
+  topLeftLogo.style.width = '175px';
+  //topLeftLogo.style.zIndex = '10';
+  topLeftLogo.title = 'Click to set the map to Home';
+  topLeftDiv.appendChild(topLeftLogo);
+
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(topLeftLogo);
+  
+  //Bottom Right logo
+  var bottomRightDiv = document.createElement('DIV');
+  var bottomRightLogo = document.createElement('DIV');
+  bottomRightLogo.style.cursor = 'pointer';
+  bottomRightLogo.style.backgroundImage = "url(https://i.imgur.com/g8bBxCf.png)";
+  bottomRightLogo.style.height = '46px';
+  bottomRightLogo.style.width = '298px';
+  bottomRightLogo.title = 'Click to set the map to Home';
+  bottomRightDiv.appendChild(bottomRightLogo);
+
+  map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(bottomRightLogo);
+
+    //Top Right logo
+    var topRightDiv = document.createElement('DIV');
+    var topRightLogo = document.createElement('DIV');
+    topRightLogo.style.cursor = 'pointer';
+    topRightLogo.style.backgroundImage = "url(https://i.imgur.com/p5s5mRc.png)";
+    topRightLogo.style.height = '300px';
+    topRightLogo.style.width = '750px';
+    topRightLogo.title = 'Click to set the map to Home';
+    topRightDiv.appendChild(topRightLogo);
+  
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(topRightLogo);
+
   // Draw lines
   for (let pathIndex = 0; pathIndex < edges.length; pathIndex++) {
     let path = edges[pathIndex];
@@ -163,13 +200,13 @@ function initMap(): void {
   managementOverlay.setMap(map);
 
   // Set symbols and logo
-  let symbolsOverlay = 
-    generateOverlay(symbols, {east: groups[3].east, west: groups[3].west, north: groups[3].north, south: groups[3].south});
-  symbolsOverlay.setMap(map);
+  //let symbolsOverlay = 
+   // generateOverlay(symbols, {east: groups[3].east, west: groups[3].west, north: groups[3].north, south: groups[3].south});
+  //symbolsOverlay.setMap(map);
 
-  let logoOverlay = 
-    generateOverlay(logo, {east: groups[4].east, west: groups[4].west, north: groups[4].north, south: groups[4].south});
-    logoOverlay.setMap(map);
+  //let logoOverlay = 
+   // generateOverlay(logo, {east: groups[4].east, west: groups[4].west, north: groups[4].north, south: groups[4].south});
+    //logoOverlay.setMap(map);
 
   // Set texts
   groups.forEach(group => {

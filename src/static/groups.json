@@ -52,16 +52,16 @@
         "size": "32px"
     },
     {
-        "id": "logo",
-        "title": "Ministry of Public Health",
-        "east": -30, 
-        "west": -35, 
+        "id": "Diabetes Screening",
+        "title": "Diabetes Screening",
+        "east": 300, 
+        "west": 350, 
         "north": 21, 
         "south": 16,
-        "x": -23,
-        "y": 38.5,
+        "x": 0,
+        "y": 44.5,
         "hasText": true,
-        "colour": "#89162F",
-        "size": "24px"
+        "colour": "#FFFFFFF",
+        "size": "42px"
     }
 ]
