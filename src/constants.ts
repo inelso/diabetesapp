@@ -21,8 +21,8 @@ export const BLUE = "#52C4F1";
 export const strokeWeight = 2;
 
 export const backgroundBounds = {
-    north: 85,
-    south: -85,
+    north: 67.5,
+    south: -67.5,
     east: 120.1,
     west: -120.1,
   };
