@@ -16,7 +16,7 @@
 /* eslint-disable no-undef, @typescript-eslint/no-unused-vars, no-unused-vars */
 import "./style.css";
 
-import background from './static/background2.png';
+import background from './static/grid4.png';
 import assessment from './static/assessment.png';
 import diagnosis from './static/DIAGNOSES.png';
 import management from './static/management.png';
@@ -77,9 +77,10 @@ function initMap(): void {
   var topLeftDiv = document.createElement('DIV');
   var topLeftLogo = document.createElement('DIV');
   topLeftLogo.style.cursor = 'pointer';
-  topLeftLogo.style.backgroundImage = "url(https://i.imgur.com/eRwDjYZ.png)";
-  topLeftLogo.style.height = '100px';
-  topLeftLogo.style.width = '93px';
+  topLeftLogo.style.backgroundImage = "url(https://i.imgur.com/UU1Z0Le.png)";
+  //topLeftLogo.style.backgroundImage = "url(https://i.imgur.com/eRwDjYZ.png)";
+  topLeftLogo.style.height = '149px';
+  topLeftLogo.style.width = '400px';
   //topLeftLogo.style.zIndex = '10';
   topLeftLogo.title = 'Click to set the map to Home';
   topLeftDiv.appendChild(topLeftLogo);
@@ -146,6 +147,7 @@ function initMap(): void {
     let nodeData = nodes[i];
     let center = { lat: nodeData.y + calibrateY, lng: nodeData.x + calibrateX};
     const node = new google.maps.Marker({
+      
       title: nodeData[i],
       position: center,
       map: map,
