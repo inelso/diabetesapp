@@ -66,8 +66,8 @@ export function isLabelVisible(mapZoom: number): boolean {
     switch (mapZoom) {
         case ScaleEnum.MIN:
             return Scale.MIN.label;
-        case ScaleEnum.MED:
-            return Scale.MED.label;
+        //case ScaleEnum.MED:
+            //return Scale.MED.label;
         case ScaleEnum.MAX:
             return Scale.MAX.label;
         default:

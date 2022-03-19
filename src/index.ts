@@ -28,6 +28,7 @@ import edges from './static/edge.json';
 import groups from './static/groups.json';
 require('bootstrap/dist/css/bootstrap.css');
 import 'bootstrap';
+
 import { setNodeData, generateOverlay } from "./utils";
 import { 
   scaleNode, scaleNodeStroke, scaleEdge,
@@ -36,6 +37,8 @@ import {
   backgroundBounds, mapRestriction, center,
   BLUE
  } from "./constants";
+
+ //import  './search';
 
 declare var $: any;
 
