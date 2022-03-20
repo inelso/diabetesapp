@@ -16,7 +16,7 @@ export function setNodeData(marker: google.maps.Marker, map: google.maps.Map): v
         position: center,
         map: map,
         icon: {
-            path: google.maps.SymbolPath.CIRCLE,
+            path: nodeData.type as string,
             fillOpacity: 1,
             fillColor: nodeData.colour,
             scale: scaleNode(map!.getZoom()!),

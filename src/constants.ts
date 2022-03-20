@@ -5,9 +5,9 @@ export const minZoom = 4;
 export const mediumZoom = 5;
 export const maxZoom = 6;
 
-export const minNodeScale = 7;
-export const mediumNodeScale = 13;
-export const maxNodeScale = 20;
+export const minNodeScale = 0.001;
+export const mediumNodeScale = 0.13;
+export const maxNodeScale = 0.20;
 
 export const minNodeStrokeScale = 1;
 export const mediumNodeStrokeScale = 2;
@@ -76,19 +76,14 @@ export function isLabelVisible(mapZoom: number): boolean {
 }
 
 export function scaleEdge(mapZoom: number): number {
-    console.log("mapzoom " + mapZoom);
     switch (mapZoom) {
         case ScaleEnum.MIN:
-            console.log("edge " + Scale.MIN.edge);
             return Scale.MIN.edge;
         case ScaleEnum.MED:
-            console.log("edge " + Scale.MED.edge);
             return Scale.MED.edge;
         case ScaleEnum.MAX:
-            console.log("edge " + Scale.MAX.edge);
             return Scale.MAX.edge;
         default:
-            console.log("edge " + Scale.MIN.edge);
             return Scale.MIN.edge;
     }
 }
