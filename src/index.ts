@@ -222,7 +222,7 @@ function initMap(): void {
   groups.forEach(group => {
     if (group.hasText) {
       let labelStaticMarker = new google.maps.Marker({
-        position: { lat: group.y + calibrateY, lng: group.x + calibrateX},
+        position: { lat: group.y + calibrateY+1, lng: group.x + calibrateX-1.2},
         map: map,
         icon: {
             path: google.maps.SymbolPath.CIRCLE,

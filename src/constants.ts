@@ -5,9 +5,9 @@ export const minZoom = 4;
 export const mediumZoom = 5;
 export const maxZoom = 6;
 
-export const minNodeScale = 0.001;
-export const mediumNodeScale = 0.13;
-export const maxNodeScale = 0.20;
+export const minNodeScale = 0.0013;
+export const mediumNodeScale = 0.0028;
+export const maxNodeScale = 0.0053;
 
 export const minNodeStrokeScale = 1;
 export const mediumNodeStrokeScale = 2;

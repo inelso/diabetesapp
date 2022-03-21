@@ -10,7 +10,7 @@ import {
 export function setNodeData(marker: google.maps.Marker, map: google.maps.Map): void {
     let index = marker.get("id");
     let nodeData = nodes[index];
-    let center = { lat: nodeData.y + calibrateY, lng: nodeData.x + calibrateX};
+    let center = { lat: nodeData.y + calibrateY+1, lng: nodeData.x + calibrateX-1.2};
     marker.setOptions({
         title: nodeData.title,
         position: center,
@@ -23,8 +23,8 @@ export function setNodeData(marker: google.maps.Marker, map: google.maps.Map): v
             strokeColor: "#FFFFFF",
             strokeWeight: scaleNodeStroke(map!.getZoom()!),
             labelOrigin: new google.maps.Point(
-                nodeData!.label != undefined ? nodeData.label.x : 0, 
-                nodeData!.label != undefined ? nodeData.label.y : 0
+                nodeData!.label != undefined ? nodeData.label.x : 1, 
+                nodeData!.label != undefined ? nodeData.label.y : -1.2
                 )
         },
         visible: true,
