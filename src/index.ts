@@ -16,7 +16,7 @@
 /* eslint-disable no-undef, @typescript-eslint/no-unused-vars, no-unused-vars */
 import "./style.css";
 
-import background from './static/grid4.png';
+import background from './static/bg5.png';
 import assessment from './static/assessment.png';
 import diagnosis from './static/DIAGNOSES.png';
 import management from './static/management.png';
