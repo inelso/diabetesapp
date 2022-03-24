@@ -186,7 +186,7 @@
         "title": "Diabetes Risk Calculation",
         "x": 5,
         "y": 10,
-        "description":"<h5>Risk assessment tool for those not identified with prediabetes or diabetes:<h5><img src='https://i.imgur.com/qZ5PnaG.png'>&nbsp;The ADA risk calculator should be used to calculate the risk of developing diabetes.</h5><h5><img src='https://i.imgur.com/DGgDmcG.png'>&nbsp;A score of ≥5 indicates an increased risk of T2DM.</h5><img src='https://i.imgur.com/QqL2tsU.png' width='100%'><p class='carousel-caption' style='top:55%;width:80%;left:10%'>Confirmation by a doctor of a diagnosis of T2DM or prediabetes is recommended.<br/><a href='https://www.diabetes.org/risk-test' target='_blank'>Risk Test</a></p></h5>",
+        "description":"<h5>Risk assessment tool for those not identified with prediabetes or diabetes:<h5><img src='https://i.imgur.com/qZ5PnaG.png'>&nbsp;The ADA risk calculator should be used to calculate the risk of &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;developing diabetes.</h5><h5><img src='https://i.imgur.com/DGgDmcG.png'>&nbsp;A score of ≥5 indicates an increased risk of T2DM.</h5><img src='https://i.imgur.com/QqL2tsU.png' width='100%'><p class='carousel-caption' style='top:55%;width:80%;left:10%'>Confirmation by a doctor of a diagnosis of T2DM or prediabetes is recommended.<br/><a href='https://www.diabetes.org/risk-test' target='_blank'>Risk Test</a></p></h5>",
         "colour": "#ee2b2f",
         "label": {
             "x": -13000,
