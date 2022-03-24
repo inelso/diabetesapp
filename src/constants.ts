@@ -58,7 +58,7 @@ export function scaleNodeStroke(mapZoom: number): number {
         case ScaleEnum.MAX:
             return Scale.MAX.nodeStroke;
         default:
-            return Scale.MIN.nodeStroke;
+            return Scale.MED.nodeStroke;
     }
 }
 
@@ -84,7 +84,7 @@ export function scaleEdge(mapZoom: number): number {
         case ScaleEnum.MAX:
             return Scale.MAX.edge;
         default:
-            return Scale.MIN.edge;
+            return Scale.MED.edge;
     }
 }
 
