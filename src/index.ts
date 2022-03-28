@@ -16,7 +16,7 @@
 /* eslint-disable no-undef, @typescript-eslint/no-unused-vars, no-unused-vars */
 import "./style.css";
 
-import background from './static/bg5.png';
+import background from './static/grid-trial.png';
 import assessment from './static/assessment.png';
 import diagnosis from './static/DIAGNOSES.png';
 import management from './static/management.png';
@@ -26,8 +26,8 @@ import logo from './static/MOPH-logo.png';
 import nodes from './static/nodes.json';
 import edges from './static/edge.json';
 import groups from './static/groups.json';
-require('bootstrap/dist/css/bootstrap.css');
-import 'bootstrap';
+//require('bootstrap/dist/css/bootstrap.css');
+//import 'bootstrap';
 
 import { setNodeData, generateOverlay } from "./utils";
 import { 
