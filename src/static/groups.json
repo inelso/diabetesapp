@@ -28,7 +28,7 @@
     {
         "id": "management",
         "title": "Management",
-        "north": -6,
+        "north": -5,
         "south": -16,
         "east": 24.0,
         "west": 15.0,

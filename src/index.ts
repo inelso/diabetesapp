@@ -26,8 +26,8 @@ import logo from './static/MOPH-logo.png';
 import nodes from './static/nodes.json';
 import edges from './static/edge.json';
 import groups from './static/groups.json';
-//require('bootstrap/dist/css/bootstrap.css');
-//import 'bootstrap';
+require('bootstrap/dist/css/bootstrap.css');
+import 'bootstrap';
 
 import { setNodeData, generateOverlay } from "./utils";
 import { 
@@ -90,6 +90,10 @@ function initMap(): void {
 
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(topLeftLogo);
   
+  topLeftLogo.addEventListener('click', function() {
+    window.open('https://www.etaleem.qa', '_blank');
+  });
+
   //Bottom Right logo
   var bottomRightDiv = document.createElement('DIV');
   var bottomRightLogo = document.createElement('DIV');
@@ -101,6 +105,10 @@ function initMap(): void {
   bottomRightDiv.appendChild(bottomRightLogo);
 
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(bottomRightLogo);
+
+  bottomRightLogo.addEventListener('click', function() {
+    window.open('https://www.etaleem.qa', '_blank');
+  });
 
     //Top Right logo
     var topRightDiv = document.createElement('DIV');
