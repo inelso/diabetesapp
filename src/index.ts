@@ -244,9 +244,9 @@ function initMap(): void {
   });
 }
 
-window.addEventListener('load', () => { 
+window.onload = function () {
   initMap;
-});
+}
 
 export { initMap };
 
