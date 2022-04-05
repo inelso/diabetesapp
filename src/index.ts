@@ -91,7 +91,7 @@ function initMap(): void {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(topLeftLogo);
   
   topLeftLogo.addEventListener('click', function() {
-    window.open('https://www.etaleem.qa', '_blank');
+    window.open('https://www.moph.gov.qa/arabic/Pages/default.aspx', '_blank');
   });
 
   //Bottom Right logo
@@ -107,7 +107,7 @@ function initMap(): void {
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(bottomRightLogo);
 
   bottomRightLogo.addEventListener('click', function() {
-    window.open('https://www.etaleem.qa', '_blank');
+    window.open('https://www.moph.gov.qa/arabic/Pages/default.aspx', '_blank');
   });
 
     //Top Right logo
