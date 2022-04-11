@@ -91,7 +91,7 @@ function initMap(): void {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(topLeftLogo);
   
   topLeftLogo.addEventListener('click', function() {
-    window.open('https://www.moph.gov.qa/arabic/Pages/default.aspx', '_blank');
+    window.open('https://etaleem.qa/', '_blank');
   });
 
   //Bottom Right logo
